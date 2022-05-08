@@ -3,6 +3,7 @@ import {createRoot} from 'react-dom/client';
 
 import { SideBar } from './components/navigation.js';
 import { TicTac } from './components/tictac.js';
+import { Footer } from './components/footer.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.css';
@@ -12,6 +13,7 @@ class Site extends React.Component {
   render() {
     return (
 		<>
+		<div className="total-content">
 			<SideBar />
 			<div className="content col-md-10">
 				<div className="game">
@@ -20,6 +22,8 @@ class Site extends React.Component {
 					</div>
 				</div>
 			</div>
+		</div>
+			<Footer	/>
 		</>
     );
   }
