@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './images/logo.png' 
+import logo from '../images/logo.png' 
 
 export class SideBar extends React.Component {
 	render() {
@@ -87,13 +87,15 @@ class Logo extends React.Component {
 	}
 }
 
-function NavigationCategory(props) { //unused
+/*
+function NavigationCategory(props) {
 	return (
 		<div className="navigation">
 			<h3>catName</h3>
 		</div>
 	);
 }
+*/
 
 function NavigationCategoryOption(props) {
 	return (
