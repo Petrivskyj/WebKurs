@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 
-function Square(props) {
-  return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
-    </button>
-  );
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import './css/index.css';
+import './css/style.css';
+
+import { SideBar } from './navigation.js';
+
+class Site extends React.Component {
+  render() {
+    return (
+		<div className="total-content">
+			<SideBar />
+			<div className="content col-md-10">
+				<div className="game">
+					<div className="game-board">
+						<Board />
+					</div>
+				</div>
+			</div>
+		</div>
+    );
+  }
 }
 
 class Board extends React.Component {
@@ -72,26 +87,18 @@ class Board extends React.Component {
   }
 }
 
-class Game extends React.Component {
-  render() {
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
-      </div>
-    );
-  }
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
 
 // ========================================
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Game />);
+root.render(<Site />);
 
 function calculateWinner(squares) {
   const lines = [
