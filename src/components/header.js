@@ -55,15 +55,33 @@ function View(props) {
 	);
 }
 
-function Search() {
-	return (
-		<div className="search">
-			<form className="search2">
-				<input type="submit" value=""/> 
-				<input type="text"/>
-			</form>
-		</div>
-	);
+class Search extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {value: ''};
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+	
+	handleChange(event) {
+		this.setState({value: event.target.value});  
+	}
+	
+	handleSubmit(event) {
+		alert('Пошук: ' + this.state.value);
+		event.preventDefault();
+	}
+	
+	render() {
+		return (
+			<div className="search">
+				<form className="search2" onSubmit={this.handleSubmit}>
+					<input type="submit" value=""/> 
+					<input type="text" value={this.state.value} onChange={this.handleChange}/>
+				</form>
+			</div>
+		);
+	}
 }
 
 function Profile() {
