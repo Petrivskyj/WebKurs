@@ -5,20 +5,25 @@ var state = {
 	"notifications":2
 };
 
+console.log(state); //todo get from backend
+
 export class Header extends React.Component {
 	render() {
 		return (
-			<div className="home-strip">
+			<>
+				<div className="home-strip">
 
-				<View 
-				object={state} />
+					<View 
+					object={state} />
 
-				<Search />
+					<Search />
 
-				<Profile />
+					<Profile />
 
-				<div className="clearfix"></div>
-			</div>
+					<div className="clearfix"></div>
+				</div>
+				<Path />
+			</>
 		);
 	}
 }
@@ -103,6 +108,17 @@ function Profile() {
 				<div className="clearfix"></div>
 			</div>
 		</>
+	);
+}
+
+function Path() {
+	//todo generate
+	return (
+		<p className="home">
+			<a href="#0">Home</a> 
+			>
+			<strong> Dashboard</strong> 
+		</p>
 	);
 }
 
