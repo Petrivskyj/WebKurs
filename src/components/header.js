@@ -69,6 +69,7 @@ class Search extends React.Component {
 	
 	handleSubmit(event) {
 		alert('Пошук: ' + this.state.value);
+		this.setState({value: ''});
 		event.preventDefault();
 	}
 	
