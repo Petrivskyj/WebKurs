@@ -2,6 +2,7 @@ import React from 'react';
 import {createRoot} from 'react-dom/client';
 
 import { SideBar } from './components/navigation.js';
+import { Header } from './components/header.js';
 import { TicTac } from './components/tictac.js';
 import { Footer } from './components/footer.js';
 
@@ -16,6 +17,7 @@ class Site extends React.Component {
 		<div className="total-content">
 			<SideBar />
 			<div className="content col-md-10">
+				<Header />
 				<div className="game">
 					<div className="game-board">
 						<TicTac />
