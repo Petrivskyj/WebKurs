@@ -4,10 +4,16 @@ import {createRoot} from 'react-dom/client';
 import { SideBar } from './components/navigation.js';
 import { Header } from './components/header.js';
 import { Stats } from './components/stats.js';
+
+import { ContactForm } from './components/contact.js';
+import { Calender } from './components/calender.js'
+
 import { Footer } from './components/footer.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.css';
+
+import './js/main.js';
 
 var statistics = {
 	"visitors":9999,
@@ -61,6 +67,11 @@ function Site() {
 				<Stats 
 				object={statistics}/>
 				
+				<div className="calenders">
+					<ContactForm />
+					<Calender />
+					<div className="clearfix"></div>
+				</div>
 			</div>
 		</div>
 		<Footer	/>
