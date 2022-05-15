@@ -3,32 +3,69 @@ import {createRoot} from 'react-dom/client';
 
 import { SideBar } from './components/navigation.js';
 import { Header } from './components/header.js';
-import { TicTac } from './components/tictac.js';
+import { Stats } from './components/stats.js';
 import { Footer } from './components/footer.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.css';
-import './css/tictactoe.css';
 
-class Site extends React.Component {
-  render() {
+var statistics = {
+	"visitors":9999,
+	"sales":9999,
+	"users":9999
+};
+var state = {
+	"messages":2,
+	"notifications":5
+};
+var nav;
+{
+	let nav1 = [
+		{"name":"Navigation"},
+		{"Cclass":"dash","name":"Dashboard"},
+		{"Cclass":"mail","name":"Emails"},
+		{"Cclass":"cal","name":"Calendar"},
+		{"Cclass":"page","name":"Pages"}
+	];
+	let nav2 = [
+		{"name":"Featured"},
+		{"Cclass":"chat","name":"Charts"},
+		{"Cclass":"art","name":"Articals"},
+		{"Cclass":"user","name":"Users"},
+		{"Cclass":"fat","name":"Favorites"},
+		{"Cclass":"speed","name":"Speed"},
+		{"Cclass":"setting","name":"Settings"}
+	];
+	let nav3 = [
+		{"name":"All Others"},
+		{"Cclass":"rev","name":"Revenue"},
+		{"Cclass":"pic","name":"Pictures"},
+		{"Cclass":"faq","name":"FAQs"}
+	];
+	nav = [nav1,nav2,nav3];
+}
+
+function Site() {
     return (
 		<>
 		<div className="total-content">
-			<SideBar />
+		
+			<SideBar 
+			object={nav}/>
+			
 			<div className="content col-md-10">
-				<Header />
-				<div className="game">
-					<div className="game-board">
-						<TicTac />
-					</div>
-				</div>
+			
+				<Header 
+				object={state}/>
+				
+				<Stats 
+				object={statistics}/>
+				
 			</div>
 		</div>
 		<Footer	/>
 		</>
     );
-  }
 }
 // ========================================
 const rootElement = document.getElementById("root");

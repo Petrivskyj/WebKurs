@@ -1,35 +1,25 @@
 import React from 'react';
 
-var state = {
-	"messages":2,
-	"notifications":2
-};
+export function Header(props) {
+	return (
+		<>
+			<div className="home-strip">
+				<View 
+				object={props.object} />
 
-console.log(state); //todo get from backend
+				<Search />
 
-export class Header extends React.Component {
-	render() {
-		return (
-			<>
-				<div className="home-strip">
+				<Profile />
 
-					<View 
-					object={state} />
-
-					<Search />
-
-					<Profile />
-
-					<div className="clearfix"></div>
-				</div>
-				<Path />
-			</>
-		);
-	}
+				<div className="clearfix"></div>
+			</div>
+			<Path />
+		</>
+	);
 }
 
-function View(props) {
 
+function View(props) {
 	return (
 		<>
 			<div className="view">
@@ -60,34 +50,28 @@ function View(props) {
 	);
 }
 
-class Search extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {value: ''};
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
+
+var value;
+
+const handleChange = (event) => {
+	value=event.target.value;
+}
 	
-	handleChange(event) {
-		this.setState({value: event.target.value});  
-	}
+const handleSubmit = (event) => {
+	alert('Пошук: ' + value);
+	value='';
+	event.preventDefault();
+}
 	
-	handleSubmit(event) {
-		alert('Пошук: ' + this.state.value);
-		this.setState({value: ''});
-		event.preventDefault();
-	}
-	
-	render() {
-		return (
-			<div className="search">
-				<form className="search2" onSubmit={this.handleSubmit}>
-					<input type="submit" value=""/> 
-					<input type="text" value={this.state.value} onChange={this.handleChange}/>
-				</form>
-			</div>
-		);
-	}
+function Search(props) {
+	return (
+		<div className="search">
+			<form className="search2" onSubmit={handleSubmit}>
+				<input type="submit" value=""/> 
+				<input type="text" value={value} onChange={handleChange}/>
+			</form>
+		</div>
+	);
 }
 
 function Profile() {

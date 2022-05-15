@@ -1,60 +1,25 @@
 import React from 'react';
 import logo from '../images/logo.png' 
 
-var nav;
-{
-	let nav1 = [
-		{"name":"Navigation"},
-		{"Cclass":"dash","name":"Dashboard"},
-		{"Cclass":"mail","name":"Emails"},
-		{"Cclass":"cal","name":"Calendar"},
-		{"Cclass":"page","name":"Pages"}
-	];
-	let nav2 = [
-		{"name":"Featured"},
-		{"Cclass":"chat","name":"Charts"},
-		{"Cclass":"art","name":"Articals"},
-		{"Cclass":"user","name":"Users"},
-		{"Cclass":"fat","name":"Favorites"},
-		{"Cclass":"speed","name":"Speed"},
-		{"Cclass":"setting","name":"Settings"}
-	];
-	let nav3 = [
-		{"name":"All Others"},
-		{"Cclass":"rev","name":"Revenue"},
-		{"Cclass":"pic","name":"Pictures"},
-		{"Cclass":"faq","name":"FAQs"}
-	];
-	
-	nav = [nav1,nav2,nav3];
-	console.log(nav); //todo get from backend
+export function SideBar(props) {
+	return (
+		<>
+		<div className="side-bar col-md-2">
+			<Logo />
+			<Navigation 
+			array={props.object}/>
+				
+		</div>
+		</>
+	);
 }
 
-
-export class SideBar extends React.Component {
-	render() {
-		return (
-			<>
-			<div className="side-bar col-md-2">
-				<Logo />
-				
-				<Navigation 
-				array={nav}/>
-				
-			</div>
-			</>
-		);
-	}
-}
-
-class Logo extends React.Component {
-	render() {
-		return (
-			<div className="logo text-center">
-				<a href="index.html"><img src={logo} alt="" /></a>
-			</div>
-		);
-	}
+function Logo() {
+	return (
+		<div className="logo text-center">
+			<a href="index.html"><img src={logo} alt="" /></a>
+		</div>
+	);
 }
 
 
@@ -64,6 +29,7 @@ function Navigation(props) {
 			{props.array.map((anObjectMapped, index) => {
 				return (
 					<NavigationCategory 
+					key={index}
 					object={anObjectMapped}/>
 				);
 			})}
@@ -85,6 +51,7 @@ function NavigationCategory(props) {
 			{array.map((anObjectMapped, index) => {
 				return (
 					<NavigationCategoryOption
+					key={index}
 					myClassName = {anObjectMapped.Cclass}
 					myName = {anObjectMapped.name}/>
 				);
