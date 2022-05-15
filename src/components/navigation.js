@@ -1,6 +1,36 @@
 import React from 'react';
 import logo from '../images/logo.png' 
 
+var nav;
+{
+	let nav1 = [
+		{"name":"Navigation"},
+		{"Cclass":"dash","name":"Dashboard"},
+		{"Cclass":"mail","name":"Emails"},
+		{"Cclass":"cal","name":"Calendar"},
+		{"Cclass":"page","name":"Pages"}
+	];
+	let nav2 = [
+		{"name":"Featured"},
+		{"Cclass":"chat","name":"Charts"},
+		{"Cclass":"art","name":"Articals"},
+		{"Cclass":"user","name":"Users"},
+		{"Cclass":"fat","name":"Favorites"},
+		{"Cclass":"speed","name":"Speed"},
+		{"Cclass":"setting","name":"Settings"}
+	];
+	let nav3 = [
+		{"name":"All Others"},
+		{"Cclass":"rev","name":"Revenue"},
+		{"Cclass":"pic","name":"Pictures"},
+		{"Cclass":"faq","name":"FAQs"}
+	];
+	
+	nav = [nav1,nav2,nav3];
+	console.log(nav); //todo get from backend
+}
+
+
 export class SideBar extends React.Component {
 	render() {
 		return (
@@ -8,69 +38,9 @@ export class SideBar extends React.Component {
 			<div className="side-bar col-md-2">
 				<Logo />
 				
-				<div className="navigation">
-					<h3>Navigation</h3>
-					
-					<NavigationCategoryOption
-					myClassName = "dash"
-					myName = "Dashboard"/>
-					
-					<NavigationCategoryOption
-					myClassName = "mail"
-					myName = "Emails"/>
-					
-					<NavigationCategoryOption
-					myClassName = "cal"
-					myName = "Calendar"/>
-					
-					<NavigationCategoryOption
-					myClassName = "page"
-					myName = "Pages"/>
-				</div>
+				<Navigation 
+				array={nav}/>
 				
-				<div className="navigation">
-					<h3>Featured</h3>
-					
-					<NavigationCategoryOption
-					myClassName = "chat"
-					myName = "Charts"/>
-					
-					<NavigationCategoryOption
-					myClassName = "art"
-					myName = "Articals"/>
-					
-					<NavigationCategoryOption
-					myClassName = "user"
-					myName = "Users"/>
-					
-					<NavigationCategoryOption
-					myClassName = "fat"
-					myName = "Favorites"/>
-					
-					<NavigationCategoryOption
-					myClassName = "speed"
-					myName = "Speed"/>
-					
-					<NavigationCategoryOption
-					myClassName = "setting"
-					myName = "Settings"/>
-				</div>
-			
-				<div className="navigation">
-					<h3>All Others</h3>
-					
-					<NavigationCategoryOption
-					myClassName = "rev"
-					myName = "Revenue"/>
-					
-					<NavigationCategoryOption
-					myClassName = "pic"
-					myName = "Pictures"/>
-					
-					<NavigationCategoryOption
-					myClassName = "faq"
-					myName = "FAQs"/>
-				</div>
 			</div>
 			</>
 		);
@@ -87,15 +57,41 @@ class Logo extends React.Component {
 	}
 }
 
-/*
+
+function Navigation(props) {
+	return (
+		<>
+			{props.array.map((anObjectMapped, index) => {
+				return (
+					<NavigationCategory 
+					object={anObjectMapped}/>
+				);
+			})}
+			
+		</>
+	);
+}
+
+
 function NavigationCategory(props) {
+	let array = props.object;
+	let name = props.object[0].name;
+	array.shift();
+
 	return (
 		<div className="navigation">
-			<h3>catName</h3>
+			<h3>{name}</h3>
+					
+			{array.map((anObjectMapped, index) => {
+				return (
+					<NavigationCategoryOption
+					myClassName = {anObjectMapped.Cclass}
+					myName = {anObjectMapped.name}/>
+				);
+			})}
 		</div>
 	);
 }
-*/
 
 function NavigationCategoryOption(props) {
 	return (
@@ -105,3 +101,4 @@ function NavigationCategoryOption(props) {
 		</ul>
 	);
 }
+
