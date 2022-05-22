@@ -453,8 +453,12 @@ i.go {
 .calenders {
 	margin: 3em 0;
 }
+.react-calendar {
+	width: 100%;
+	background: #8e44ad;
+}
 .calender-right {
-	min-height:605px;
+	min-height:400px;
 	float:right;
 	width:54%;
 	background:#8e44ad;

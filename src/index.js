@@ -5,6 +5,9 @@ import { SideBar } from './components/navigation.js';
 import { Header } from './components/header.js';
 import { Stats } from './components/stats.js';
 
+import { WorldMap } from './components/map.js';
+import { SiteReport } from './components/report.js';
+
 import { ContactForm } from './components/contact.js';
 import { Calender } from './components/calender.js'
 
@@ -66,6 +69,12 @@ function Site() {
 				
 				<Stats 
 				object={statistics}/>
+				
+				<div className="total-world">
+					<WorldMap />
+					<SiteReport />
+					<div className="clearfix"></div>
+				</div>
 				
 				<div className="calenders">
 					<ContactForm />
