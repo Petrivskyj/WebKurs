@@ -5,6 +5,8 @@ import { SideBar } from './components/navigation.js';
 import { Header } from './components/header.js';
 import { Stats } from './components/stats.js';
 
+import { Stats_Plot } from './components/stats_plot.js'
+
 import { WorldMap } from './components/map.js';
 import { SiteReport } from './components/report.js';
 
@@ -69,6 +71,8 @@ function Site() {
 				
 				<Stats 
 				object={statistics}/>
+				
+				<Stats_Plot/>
 				
 				<div className="total-world">
 					<WorldMap />

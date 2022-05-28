@@ -33,6 +33,7 @@ label{
 }
 .total-content {
 	margin-top:2em;
+	margin-left: 1em;
 	display: flex;
 }
 .side-bar {
