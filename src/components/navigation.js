@@ -17,7 +17,10 @@ export function SideBar(props) {
 function Logo() {
 	return (
 		<div className="logo text-center">
-			<a href="index.html"><img src={logo} alt="" /></a>
+			
+			<a href="/temp">
+				<img src={logo} alt="" />
+			</a>
 		</div>
 	);
 }
@@ -63,8 +66,8 @@ function NavigationCategory(props) {
 function NavigationCategoryOption(props) {
 	return (
 		<ul>
-			<li><a href="index.html"><i className={props.myClassName}></i></a></li>
-			<li><a href="index.html">{props.myName}</a></li>
+			<li><a href="/temp"><i className={props.myClassName}></i></a></li>
+			<li><a href="/temp">{props.myName}</a></li>
 		</ul>
 	);
 }

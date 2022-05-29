@@ -25,12 +25,12 @@ function View(props) {
 			<div className="view">
 				<ul>
 					<LiWithIAndHref
-					object={{"href":"index.html","iClass":"refresh"}}/>
+					object={{"href":"/","iClass":"refresh"}}/>
 					
 					<LiWithSpanAndHref
 					object={{
 						"cclassName":"messages",
-						"href":"#1",
+						"href":"/temp",
 						"iimage":"msgs",
 						"spanClass":"red",
 						"messages": props.object.messages
@@ -39,7 +39,7 @@ function View(props) {
 					<LiWithSpanAndHref
 					object={{
 						"cclassName":"notifications",
-						"href":"#2",
+						"href":"/temp",
 						"iimage":"bell",
 						"spanClass":"blue",
 						"messages": props.object.notifications
@@ -80,13 +80,13 @@ function Profile() {
 			<div className="member">
 				<ul>
 					<LiWithIAndHref
-					object={{"href":"#3","iClass":"men"}}/>
+					object={{"href":"/temp","iClass":"men"}}/>
 
 					<LiWithTextAndHref
-					object={{"href":"#4","ttext":"Username"}}/>
+					object={{"href":"/temp","ttext":"Username"}}/>
 
 					<LiWithIAndHref
-					object={{"href":"#5","iClass":"settings"}}/>
+					object={{"href":"/temp","iClass":"settings"}}/>
 
 				</ul>
 				<div className="clearfix"></div>
@@ -96,10 +96,9 @@ function Profile() {
 }
 
 function Path() {
-	//todo generate
 	return (
 		<p className="home">
-			<a href="#0">Home</a> 
+			<a href="/temp">Home</a> 
 			>
 			<strong> Dashboard</strong> 
 		</p>

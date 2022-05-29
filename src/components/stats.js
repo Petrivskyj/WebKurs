@@ -3,9 +3,9 @@ import React from 'react';
 export function Stats(props) {
 	
 	let statsObjects = [
-		{"generalClass":"visitors","title":"Total Visitors","number":props.object.visitors,"newNumber":"10%"},
-		{"generalClass":"sales","title":"Total Sale","number":props.object.sales,"newNumber":"100"},
-		{"generalClass":"total-users","title":"Total User","number":props.object.users,"newNumber":"120"}
+		{"generalClass":"visitors","title":"Total Visitors","number":props.object.visitors,"newNumber":props.object.newVisitors},
+		{"generalClass":"sales","title":"Total Sale","number":props.object.sales,"newNumber":props.object.newSales},
+		{"generalClass":"total-users","title":"Total User","number":props.object.users,"newNumber":props.object.newUsers}
 	];
 	
 	return (
@@ -32,9 +32,11 @@ function OneStat(props) {
 				<div className="next-choise-text">
 					<p>{props.object.newNumber} New today</p>
 				</div>
-				<div className="next-choise-img">
-					<i className="go"></i>
-				</div>
+				<a href="/temp">
+					<div className="next-choise-img">
+						<i className="go"></i>
+					</div>
+				</a>
 			</div>
 			<div className="clearfix"></div>
 		</div>

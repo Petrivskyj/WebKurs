@@ -1,0 +1,24 @@
+[
+	[
+		{"name":"Navigation"},
+		{"Cclass":"dash","name":"Dashboard"},
+		{"Cclass":"mail","name":"Emails"},
+		{"Cclass":"cal","name":"Calendar"},
+		{"Cclass":"page","name":"Pages"}
+	],
+	[
+		{"name":"Featured"},
+		{"Cclass":"chat","name":"Charts"},
+		{"Cclass":"art","name":"Articals"},
+		{"Cclass":"user","name":"Users"},
+		{"Cclass":"fat","name":"Favorites"},
+		{"Cclass":"speed","name":"Speed"},
+		{"Cclass":"setting","name":"Settings"}
+	],
+	[
+		{"name":"All Others"},
+		{"Cclass":"rev","name":"Revenue"},
+		{"Cclass":"pic","name":"Pictures"},
+		{"Cclass":"faq","name":"FAQs"}
+	]
+]

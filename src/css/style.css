@@ -455,11 +455,12 @@ i.go {
 	margin: 3em 0;
 }
 .react-calendar {
+	background: #8e44ad !important;
+	margin-top: 4em;
 	width: 100%;
-	background: #8e44ad;
 }
 .calender-right {
-	min-height:400px;
+	min-height: 545px;
 	float:right;
 	width:54%;
 	background:#8e44ad;
@@ -470,7 +471,6 @@ i.go {
 	margin-left:2em;
 }
 .calender-left {
-	min-height:605px;
 	width:43%;
 	margin-right:3%;
 	float:left;
@@ -491,7 +491,6 @@ i.go {
 }
 .calender-left form textarea {
 	resize:none;
-	height:201px;
 	border-radius: 0;
 }
 .calender-left form input[type="submit"] {
@@ -516,7 +515,7 @@ i.go {
 	color:#000;
 }
 .calender-left h3,.calender-right h3  {
-	margin-bottom:1.5em;
+	margin-bottom:1em;
 	font-size:1.9em;
 	color:#fff;
 	font-weight:400;
@@ -549,7 +548,9 @@ i.go {
 	transition: color 0.2s ease-in-out;
 	z-index: 1;
 }
-
+.cd-tabs{
+	margin-bottom: 1em;
+}
 .men-grid{
 	float:right;
 	width:71%;
@@ -706,6 +707,7 @@ div#vmap {
 	position:relative;
 	background:#bdc3c7;
 	padding:2.7em;
+	padding-bottom: 1.3em;
 	margin-left:3%;
 	min-height:500px;
 }
